@@ -1,0 +1,23 @@
+{
+  "name": "mocha-mix-react",
+  "version": "0.0.0-rc",
+  "description": "mocha-mix-react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rexk/mocha-mix-react.git"
+  },
+  "keywords": [
+    "mocha",
+    "mocha-mix"
+  ],
+  "author": "myungsunrex@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rexk/mocha-mix-react/issues"
+  },
+  "homepage": "https://github.com/rexk/mocha-mix-react#readme"
+}
