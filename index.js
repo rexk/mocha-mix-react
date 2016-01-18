@@ -1,38 +1,24 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
+var createStubReactClass = require('./lib/createStubReactClass');
 
-function getDisplayName(tagName, name) {
-  if (name) {
-    return 'MixStub(' + name + '.' + tagName.toLowerCase() +')';
-  }
-
-  return 'MixStub(' + tagName.toLowerCase() + ')';
+function ReactClassGenerator(options) {
+  options = options || {};
+  var mockName = options.mockName;
+  var tagName = options.tagName || 'DIV';
+  return createStubReactClass(tagName, mockName);
 }
 
-/**
- * createSubReactclass
- *
- * @param  {string}           name    name to be a displayName
- * @return {ReactComponent}
- */
-function createStubReactClass(tagName, name) {
-  tagName = tagName || 'DIV';
-  return React.createClass({
-    displayName: getDisplayName(tagName, name),
-    render: function () {
-      return React.createElement(
-        tagName,
-        this.props,
-        this.props.children
-      );
+module.exports = function reactPlugin(mochaMix) {
+  mochaMix.setDefaultMockGenerator(ReactClassGenerator);
+
+  mochaMix.afterEach(function cleanUp() {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      var testDivs = document.body.childNodes;
+      var result = Array.prototype.slice.call(testDivs).every(function (div) {
+        return ReactDOM.unmountComponentAtNode(div);
+      });
+      document.body.innerHTML = '';
     }
   });
-}
-
-module.exports = function reactPlugin(manager) {
-  var reactGenerator = manager.createMockGenerator(function (options) {
-    var mockName = options.mockName;
-    return createStubReactClass('DIV', mockName);
-  });
-
-  manager.setDefaultMock(reactGenerator);
 };

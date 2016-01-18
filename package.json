@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/rexk/mocha-mix-react/issues"
   },
-  "homepage": "https://github.com/rexk/mocha-mix-react#readme"
+  "homepage": "https://github.com/rexk/mocha-mix-react#readme",
+  "devDependencies": {
+    "babel-eslint": "^5.0.0-beta6",
+    "eslint": "^1.10.3",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
 }
