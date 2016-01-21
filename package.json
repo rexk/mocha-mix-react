@@ -1,18 +1,22 @@
 {
   "name": "mocha-mix-react",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.0-alpha.1",
   "description": "mocha-mix-react",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover _mocha --require ./mocha-processor.js $(find ./lib -name *.test.js)",
+    "test:simple": "mocha --require ./mocha-processor.js  $(find ./lib -name *.test.js)",
+    "test:watch": "mocha --require ./mocha-processor.js  --watch $(find ./lib -name *.test.js)",
+    "eslint": "eslint ./lib"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rexk/mocha-mix-react.git"
+    "url": "https://github.com/rexk/mocha-mix-react"
   },
   "keywords": [
     "mocha",
-    "mocha-mix"
+    "mocha-mix",
+    "mockery"
   ],
   "author": "myungsunrex@gmail.com",
   "license": "MIT",
@@ -22,7 +26,19 @@
   "homepage": "https://github.com/rexk/mocha-mix-react#readme",
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.3.13",
+    "babel-register": "^6.4.3",
     "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.15.0",
+    "expect": "^1.13.4",
+    "expect-jsx": "^2.2.2",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4",
+    "mocha-mix": "^1.0.0-alpha.0",
+    "mocha-mix-jsdom": "0.0.1-alpha.2",
+    "mocha-mix-mockery": "0.0.1-alpha.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   }
