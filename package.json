@@ -24,6 +24,10 @@
     "url": "https://github.com/rexk/mocha-mix-react/issues"
   },
   "homepage": "https://github.com/rexk/mocha-mix-react#readme",
+  "peerDependencies": {
+    "react": "^0.14",
+    "react-dom": "^0.14",
+  },
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta6",
     "babel-preset-es2015": "^6.3.13",
@@ -39,7 +43,7 @@
     "mocha-mix": "^1.0.0-alpha.0",
     "mocha-mix-jsdom": "0.0.1-alpha.4",
     "mocha-mix-mockery": "0.0.1-alpha.3",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react": "^0.14",
+    "react-dom": "^0.14",
   }
 }
