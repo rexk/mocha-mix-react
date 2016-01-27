@@ -1,3 +1,1 @@
-var ReactPlugin = require('./lib/ReactPlugin');
-
-module.exports = ReactPlugin;
+module.exports = require('./lib/ReactPlugin');
